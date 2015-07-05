@@ -54,6 +54,9 @@
                     <li>
                         <a href="#contact">Contact</a>
                     </li>
+                    <% if user_signed_in? %>
+                      <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
+                      <% end %>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -67,8 +70,14 @@
             <div class="container">
                 <h1>Welcome !</h1>
                 <h2>GrihaChikitsa</h2>
-                <p><%= link_to "Sign Up", "#", class: "btn btn-primary" %></p>
-                <p><%= link_to "Sign In", "#", class: "btn btn-default" %></p>
+                <% if user_signed_in? %>
+                       # Welcome Member
+                <% else %>
+                <p>
+                    <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-primary" %>
+                    <%= link_to "Sign In", new_user_session_path, class: "btn btn-default" %>
+                </p>
+                <% end %>
             </div>
         </div>
     </header>
