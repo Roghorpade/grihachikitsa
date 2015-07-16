@@ -1,0 +1,12 @@
+<% @appointments.each do |appointment| %>
+  <h3><%= appointment.id %><h3>
+  <%= appointment.time %>
+  <% if appointment.confirmed.nil? %>
+    <h4>Pending</h4>
+  <% elsif appointment.confirmed? %>
+  	<h4>Confirmed</h4>
+  <% else %>
+    <h4>Canceled</h4>
+  <% end %>
+  <hr>
+<% end %>

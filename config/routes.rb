@@ -3,6 +3,15 @@ Rails.application.routes.draw do
   root "pages#home"
   get "user_page" => "pages#user_page"
   resources :users, only: [:index, :show]
+  resources :appointments
+  namespace :admin do
+    resources :appointments do
+      member do
+        get :confirm
+        get :cancel
+      end
+    end
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
