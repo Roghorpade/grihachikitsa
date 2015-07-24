@@ -27,9 +27,10 @@
             <h3>Age: <%= @user.age %></h3>
     </div>
 
-    <%= link_to 'Create an appointment', new_appointment_path %>
+    <%= link_to "Create Appointment", new_appointment_path, class: "btn btn-primary" %>
     <br>
-    <%= link_to 'List all the appointments', appointments_path %>
+    <br>
+    <%= link_to "List appointments", appointments_path, class: "btn btn-warning" %>
 </div>
 
     

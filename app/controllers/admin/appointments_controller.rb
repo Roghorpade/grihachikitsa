@@ -7,11 +7,11 @@ class Admin::AppointmentsController < AdminController
 		@appointment = Appointment.find(params[:id])
 
 		if @appointment.update_attributes(confirmed: true)
-			flash[:notice] = "Appointment number #{@appointment.id} has been confirmed."
+			flash[:notice] = "Appointment number #{@appointment.id} confirmed."
 
 		    redirect_to admin_appointments_path
 	    else
-	    	flash[:alert] = 'Error has been occured.'
+	    	flash[:alert] = 'Error occured.'
 	    end	
 	end
 
@@ -19,11 +19,11 @@ class Admin::AppointmentsController < AdminController
 		@appointment = Appointment.find(params[:id])
 
 		if @appointment.update_attributes(confirmed: false)
-		    flash[:notice] = "Appointment number #{@appointment.id} has been canceled."
+		    flash[:notice] = "Appointment number #{@appointment.id} canceled."
 
 		    redirect_to admin_appointments_path
 		else
-		    flash[:alert] = 'Error has been occured.'
+		    flash[:alert] = 'Error occured.'
 		end
 	end
 end

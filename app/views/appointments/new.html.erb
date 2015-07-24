@@ -1,8 +1,10 @@
-
+<div class= "jumbotron">
 <h1>Choose an appointment date:</h1>
 
 <%= simple_form_for @appointment do |f|%>
 	<%= f.datetime_select :time %>
 	<br>
+	<br>
 	<%= f.submit %>
+</div>
 <% end %>

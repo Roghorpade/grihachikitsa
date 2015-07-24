@@ -1,7 +1,6 @@
 class PagesController < ApplicationController
-  def home
-  end 
-
-  def user_page
-  end
+	skip_before_filter :authenticate_user!
+	
+    def home
+    end
 end

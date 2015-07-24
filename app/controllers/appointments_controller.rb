@@ -16,7 +16,7 @@ class AppointmentsController < ApplicationController
 		@appointment.user = current_user
 
 		if @appointment.save
-			flash[:notice] = 'Your appointment is created. It will be confirmed soon.'
+			flash[:notice] = 'Appointment created. Pending Confirmation.'
 			redirect_to appointment_path(@appointment)
 	    else
 	    	redirect_to root_path

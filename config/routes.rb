@@ -1,10 +1,15 @@
 Rails.application.routes.draw do
   devise_for :users
+
   root "pages#home"
-  get "user_page" => "pages#user_page"
-  resources :users, only: [:index, :show]
+
+  resources :users, only: [:show]
+
   resources :appointments
+
   namespace :admin do
+    resources :users, only: [:index]
+
     resources :appointments do
       member do
         get :confirm
