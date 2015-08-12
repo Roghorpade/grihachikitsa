@@ -8,11 +8,11 @@
     display: block;
     width: 100%;
     text-align: center;
-    background: url('https://pp.vk.me/c621624/v621624821/3a984/czglh84Tuug.jpg') no-repeat center center scroll;
-    background-position: -100px 60px;
+    background: url('/img/GC WebBanner.002.jpg') no-repeat center center scroll;
+    background-position: 50%;
     background-size: contain;
-    background-size: 120% 80%;
-
+    background-size: 100%;
+    margin-top: 10em;
 }
 
 .navbar {
@@ -154,6 +154,10 @@ footer {
 }
 
 @media(max-width:640px) {
+    .header-image {
+        background-size: 140%;
+    }
+
     .headline {
         padding: 75px 0 25px 0;
     }
