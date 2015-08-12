@@ -80,4 +80,6 @@ Rails.application.configure do
   # Note to set this to actual host
   config.action_mailer.default_url_options = { :host => 'https://grihachikitsa.herokuapp.com/' }
 
+  config.action_controller.asset_host = 'grihachikitsa.herokuapp.com'
+
 end
