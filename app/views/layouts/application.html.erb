@@ -65,12 +65,13 @@
                       </li>
                       <% end %>
                 </ul>
+                                      <%= link_to "Sign In", new_user_session_path, class: 'navbar-link', style: 'float: right; margin-top:15px;'%>
             </div>
             <!-- /.navbar-collapse -->
         </div>
         <!-- /.container -->
     </nav>
-
+<br><br>
   <%= yield %>
 
         <hr class="featurette-divider">

@@ -29,6 +29,12 @@
     padding-top: 50px;
 }
 
+.sign-up {
+    width:150px;
+    height: 50px;
+    font-size: 25px;
+}
+
 .headline {
     padding: 120px 0;
 }
