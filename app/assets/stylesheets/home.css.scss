@@ -1,4 +1,6 @@
 $brand-color: #38857F;
+$brand-color-light: #2BC7BB;
+$light-grey: #F7F7F7;
 
 .header-image {
     display: block;
@@ -7,7 +9,6 @@ $brand-color: #38857F;
     background: image-url('background.jpg');
     background-size: cover;
     background-position: center;
-    position: relative;
 }
 
 .topbar {
@@ -34,6 +35,7 @@ $brand-color: #38857F;
                     font-size: 18px;
                     border-bottom: 2px solid transparent;
                     padding-bottom: 1px;
+                    -webkit-transition: color 0.2s ease, border-bottom 0.2s ease;
                     transition: color 0.2s ease, border-bottom 0.2s ease;
 
                     &:hover, &:focus {
@@ -94,6 +96,7 @@ $brand-color: #38857F;
     border: none;
     border-radius: 50px;
     background: $brand-color;
+    -webkit-transition: background 0.2s ease;
     transition: background 0.2s ease;
 
     &:hover, &:focus {
@@ -121,10 +124,14 @@ $brand-color: #38857F;
             border-width: 2px;
         }
     }
+
+    &.invert {
+        background: $light-grey;
+    }
 }
 
-.how-section {
-    .how-item {
+.what-section {
+    .what-item {
         text-align: center;
 
         .icon {
@@ -144,6 +151,103 @@ $brand-color: #38857F;
     }
 }
 
+.how-section {
+    .how-item {
+        background: white;
+        -webkit-box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.20);
+        -moz-box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.20);
+        box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.20);
+        border-radius: 2px;
+        text-align: center;
+
+        .number {
+            display: inline-block;
+            margin-top: -30px;
+            width: 60px;
+            background: $brand-color-light;
+            border-radius: 100px;
+            -webkit-box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.10);
+            -moz-box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.10);
+            box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.10);
+
+            .text {
+                color: white;
+                font-size: 24px;
+                display: inline-block;
+                width: 30px;
+                height: 60px;
+                line-height: 60px;
+            }
+        }
+
+        .description {
+            margin-top: 25px;
+            font-size: 18px;
+            padding: 0 20px 25px;
+        }
+    }
+}
+
+.services-section {
+    .services-item {
+        text-align: center;
+        background: $light-grey;
+        -webkit-box-shadow: inset 0px 0px 0px 1px #E6E6E6;
+        -moz-box-shadow: inset 0px 0px 0px 1px #E6E6E6;
+        box-shadow: inset 0px 0px 0px 1px #E6E6E6;
+        padding-top: 40px;
+
+        .icon {
+            height: 50px;
+        }
+
+        .title {
+            font-weight: bold;
+            font-size: 22px;
+            margin-top: 25px;
+        }
+
+        .description {
+            margin-top: 25px;
+            font-size: 18px;
+            padding: 0 20px 25px;
+        }
+
+        .price {
+            background: $brand-color;
+            color: white;
+            font-size: 20px;
+            padding: 10px;
+            margin: 0;
+        }
+    }
+}
+
+.footer-cta {
+    display: block;
+    width: 100%;
+    text-align: center;
+    background: image-url('background2.jpg');
+    background-size: cover;
+    background-position: center;
+
+    .container {
+        color: white;
+        padding: 150px 20px;
+
+        .header {
+            font-size: 40px;
+            margin: 0 0 50px;
+            text-shadow: 1px 2px 0 hsla(0%, 0%, 0%, .1);
+        }
+
+        .btn-primary {
+            font-size: 20px;
+            padding: 15px 20px;
+        }
+    }
+}
+
 footer {
     margin: 50px 0;
 }
@@ -157,6 +261,17 @@ footer {
         }
     }
 
+    .what-section {
+        .column + .column {
+            margin-top: 50px;
+        }
+
+        .what-item {
+            max-width: 400px;
+            margin: auto;
+        }
+    }
+
     .how-section {
         .column + .column {
             margin-top: 50px;
@@ -164,7 +279,17 @@ footer {
 
         .how-item {
             max-width: 400px;
-            display: header;
+            margin: auto;
+        }
+    }
+
+    .services-section {
+        .column + .column {
+            margin-top: 50px;
+        }
+
+        .services-item {
+            max-width: 400px;
             margin: auto;
         }
     }

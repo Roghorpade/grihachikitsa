@@ -1,4 +1,3 @@
-<!-- Full Width Image Header -->
 <header class="headline header-image">
     <nav class="topbar container">
         <div class="logo">
@@ -28,7 +27,7 @@
     </div>
 </header>
 
-<section class="section how-section">
+<section class="section what-section">
     <div class="container">
         <div class="section-header">
             <h2>Welcome to GrihaChikitsa</h3>
@@ -37,24 +36,24 @@
 
         <div class="row">
             <div class="col-sm-12 col-md-4 column">
-                <div class="how-item">
-                    <img src="<%= image_path "how/quality.png" %>" alt="Quality" class="icon" />
+                <div class="what-item">
+                    <img src="<%= image_path "what/quality.png" %>" alt="Quality" class="icon" />
                     <p class="title">Quality</p>
                     <p class="description">This is the description blah blah description more descirption lorem ipsum hello.</p>
                 </div>
             </div>
 
             <div class="col-sm-12 col-md-4 column">
-                <div class="how-item">
-                    <img src="<%= image_path "how/convenience.png" %>" alt="Convenience" class="icon" />
+                <div class="what-item">
+                    <img src="<%= image_path "what/convenience.png" %>" alt="Convenience" class="icon" />
                     <p class="title">Convenience</p>
                     <p class="description">This is the description blah blah description more descirption lorem ipsum hello.</p>
                 </div>
             </div>
 
             <div class="col-sm-12 col-md-4 column">
-                <div class="how-item">
-                    <img src="<%= image_path "how/affordable.png" %>" alt="Affordable" class="icon" />
+                <div class="what-item">
+                    <img src="<%= image_path "what/affordable.png" %>" alt="Affordable" class="icon" />
                     <p class="title">Affordable</p>
                     <p class="description">This is the description blah blah description more descirption lorem ipsum hello.</p>
                 </div>
@@ -63,43 +62,86 @@
     </div>
 </section>
 
-<!-- Page Content -->
-<div class="container">
+<section class="section how-section invert">
+    <div class="container">
+        <div class="section-header">
+            <h2>How does it work?</h3>
+            <hr>
+        </div>
 
-    <hr class="featurette-divider">
+        <div class="row">
+            <div class="col-sm-12 col-md-4 column">
+                <div class="how-item">
+                    <span class="number"><span class="text">1</span></span>
+                    <p class="description">This is the description blah blah description more descirption lorem ipsum hello.</p>
+                </div>
+            </div>
 
-    <!-- First Featurette -->
-    <div class="featurette" id="about">
-        <img class="featurette-image img-circle img-responsive pull-right" src="/img/Pic1500.001.jpg">
-        <h2 class="featurette-heading">
-            <span class="text-muted">“My mother needs to go to the doctor and I can’t take off from work.”</span>
-        </h2>
-        <p class="lead">When we heard this statement one too many times, we stopped to think about it. It’s not wrong! Situations are such.  It feels worse when we empathize with our parents too. It’s one of those experiences we can all do without. That’s when we decided to use technology to provide independence to our dependents.</p>
+            <div class="col-sm-12 col-md-4 column">
+                <div class="how-item">
+                    <span class="number"><span class="text">2</span></span>
+                    <p class="description">This is the description blah blah description more descirption lorem ipsum hello.</p>
+                </div>
+            </div>
+
+            <div class="col-sm-12 col-md-4 column">
+                <div class="how-item">
+                    <span class="number"><span class="text">3</span></span>
+                    <p class="description">This is the description blah blah description more descirption lorem ipsum hello.</p>
+                </div>
+            </div>
+        </div>
     </div>
+</section>
 
-    <hr class="featurette-divider">
+<section class="section services-section">
+    <div class="container">
+        <div class="section-header">
+            <h2>Services &amp; Pricing</h3>
+            <hr>
+        </div>
 
-    <!-- Second Featurette -->
-    <div class="featurette" id="services">
-        <img class="featurette-image img-circle img-responsive pull-left" src="/img/Pic2500.001.jpg">
-        <h2 class="featurette-heading">
-            <span class="text-muted">We tie up with hospitals nearby to bring quality medical assistance to the comfort of your home.</span>
-        </h2>
-        <p class="lead">GrihaChikitsa is a technology driven health care service provider. No more having to feel bad about sidelining your parents’ health.  Keep a constant check on how their health is. Give them the same concern they gave you with the convenience that technology brings..</p>
+        <div class="row">
+            <div class="col-sm-12 col-md-4 column">
+                <div class="services-item">
+                    <img src="<%= image_path "what/quality.png" %>" alt="Quality" class="icon" />
+                    <p class="title">ILLNESS</p>
+                    <p class="description">This is the description blah blah description more descirption lorem ipsum hello.</p>
+                    <p class="price">$19.99</p>
+                </div>
+            </div>
+
+            <div class="col-sm-12 col-md-4 column">
+                <div class="services-item">
+                    <img src="<%= image_path "what/convenience.png" %>" alt="Convenience" class="icon" />
+                    <p class="title">INJURY</p>
+                    <p class="description">This is the description blah blah description more descirption lorem ipsum hello.</p>
+                    <p class="price">$19.99</p>
+                </div>
+            </div>
+
+            <div class="col-sm-12 col-md-4 column">
+                <div class="services-item">
+                    <img src="<%= image_path "what/affordable.png" %>" alt="Affordable" class="icon" />
+                    <p class="title">ELSE</p>
+                    <p class="description">This is the description blah blah description more descirption lorem ipsum hello.</p>
+                    <p class="price">$19.99</p>
+                </div>
+            </div>
+        </div>
     </div>
+</section>
 
-    <hr class="featurette-divider">
+<div class="footer-cta">
+    <div class="container">
+        <p class="header">No more waiting at clinics.</p>
 
-    <!-- Third Featurette -->
-    <div class="featurette" id="contact">
-        <img class="featurette-image img-circle img-responsive pull-right" src="/img/Pic3500.001.jpg">
-        <h2 class="featurette-heading">
-            <span class="text-muted">“Technology How You Ask?”</span>
-        </h2>
-        <p class="lead">Subscribers of our service get a Master Health Check Up. We upload the results of this check up on our database. A unique login id accessible by a max of 3 persons allows you access to your own personal health portal. Here you can view the health records of your parents.
-
-        Use the app to schedule appointments and keep a close eye on the results without the burden of having to break your schedule.  No one wants to have to prioritize over his or her parents. </p>
-
-         <%= link_to "Sign Up Now And Gift Your Parents Independence!", new_user_registration_path, class: "btn btn-primary", style: 'font-size: 25px' %>
+        <div class="header-buttons">
+            <% if user_signed_in? %>
+                <%= link_to "MY ACCOUNT", user_path(current_user), class: "btn btn-primary btn-brand" %>
+            <% else %>
+                <%= link_to "REQUEST A VISIT", new_user_registration_path, class: "btn btn-primary btn-brand" %>
+            <% end %>
+        </div>
     </div>
 </div>
