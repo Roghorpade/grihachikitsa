@@ -2,7 +2,7 @@
 <h1>Choose an appointment date:</h1>
 
 <%= simple_form_for @appointment do |f|%>
-	<%= f.datetime_select :time %>
+	<%= f.datetime_select :time, order: [:day, :month, :year]  %>
 	<br>
 	<br>
 	<%= f.label 'Reason for appointment:' %><br>

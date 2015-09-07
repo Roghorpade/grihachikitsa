@@ -6,7 +6,11 @@ class ApplicationController < ActionController::Base
   before_filter :authenticate_user!
 
   def after_sign_in_path_for(resource)
-  	user_path(resource)
+    if resource.steps_passed?
+      new_appointment_path
+    else
+      user_steps_path
+    end
   end
 
   def configure_permitted_parameters

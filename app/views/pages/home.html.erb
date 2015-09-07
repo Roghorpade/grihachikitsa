@@ -9,7 +9,12 @@
                 <li><a href="#services">Services</a></li>
                 <li><a href="#pricing">Pricing</a></li>
             </ul>
-            <a href="/users/sign_up" class="btn btn-primary btn-brand">SIGN UP</a>
+            <% if user_signed_in? %>
+                <%= link_to "SIGN OUT", destroy_user_session_path, method: :delete, class: "btn btn-primary btn-brand" %>
+            <% else %>
+                <a href="/users/sign_in" class="btn btn-primary btn-brand">SIGN IN</a>
+            <% end %>
+
         </div>
     </nav>
 

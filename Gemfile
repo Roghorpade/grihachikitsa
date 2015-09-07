@@ -26,6 +26,8 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 gem 'simple_form'
 gem 'rolify'
+gem 'wicked'
+gem 'pry'
 
 group :development, :test do 
    gem 'sqlite3'

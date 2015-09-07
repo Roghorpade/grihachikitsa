@@ -1,0 +1,41 @@
+<div class="panel panel-info">
+ <div class="panel-heading">
+  <h2>Personal info</h2>
+ </div>
+
+<div class="panel-body">
+  <%= simple_form_for @user, url: wizard_path do |f| %>
+
+  <div class= "form-group">
+    <%= f.label :first_name %>
+    <%= f.text_field :first_name, class: "form-control" %>
+  </div>
+
+  <div class= "form-group">
+    <%= f.label :last_name %>
+    <%= f.text_field :last_name, class: "form-control" %>
+  </div>
+
+  <div class='form-group'>
+  	<%= f.label :mobile_number %>
+  	<%= f.text_field :mobile_number, class: 'form-control' %>
+  </div>
+
+  <div class='form-group'>
+  	<%= f.label :gender %>
+  	<%= f.select :gender, User.genders.keys, class: 'form-control' %>
+  </div>
+
+  <div class= "form-group">
+  	<%= f.label :date_of_birth %>
+    <%= f.date_select :date_of_birth, order: [:day, :month, :year], class: "form-control" %>
+  </div>
+
+
+    <div>
+  	<%= f.submit "Continue registration", class: "btn btn-primary" %>
+    </div>
+    
+  <% end %>
+</div>
+</div>
