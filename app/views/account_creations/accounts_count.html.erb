@@ -1,6 +1,6 @@
-<h1>How many accounts do you want to create?</h1>
+<h1> Account for Family?</h1>
 
 <%= form_tag wizard_path, method: :put do %>
 	<%= select_tag :accounts_count, options_for_select((1..4).map {|v| [v,v]}) %>
-	<%= submit_tag 'Next step' %>
+	<%= submit_tag 'Next' %>
 <% end %>
