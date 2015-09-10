@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
   resources :appointments
   resources :user_steps
+  resources :account_creations
 
   namespace :admin do
     resources :users, only: [:index]

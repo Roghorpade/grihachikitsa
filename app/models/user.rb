@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
   enum gender: {male: 0, female: 1}
 
   has_many :appointments
+  has_many :accounts
 
   def name
   	"#{first_name} #{last_name}"
