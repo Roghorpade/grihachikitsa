@@ -10,6 +10,8 @@ class User < ActiveRecord::Base
   has_many :appointments
   has_many :accounts
 
+  accepts_nested_attributes_for :accounts
+
   def name
   	"#{first_name} #{last_name}"
   end

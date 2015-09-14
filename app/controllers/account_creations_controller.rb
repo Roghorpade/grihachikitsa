@@ -14,28 +14,23 @@ class AccountCreationsController < ApplicationController
 		case step
 		when :accounts_count
 			if params[:accounts_count].present?	
-				if params[:accounts_count].to_i > 1	
-					session[:accounts_count] = params[:accounts_count].to_i
-					session[:accounts_count].each do |i|
-					  instance_variable_set("@user#{i+1}") = @user.account.build
-					end
+				if params[:accounts_count].to_i > 1
+					params[:accounts_count].to_i.times { @user.accounts.build }
 				else
 					skip_step
 				end
 			end
 		when :accounts_info
-			bindin
+			@user.update_attributes(user_params)
 		end
 
 		render_wizard(@user)
 	end
 
-	def create
-		binding.pry
-	end
-
 	private
 
-	def account_creations_params
+	def user_params
+		params.require(:user).permit(accounts_attributes: [:first_name, :last_name, :height, :date_of_birth,
+			:mobile_number, :gender, :address])
 	end
 end

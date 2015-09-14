@@ -69,6 +69,7 @@ GEM
     mime-types (2.6.1)
     minitest (5.7.0)
     multi_json (1.11.1)
+    nested_form (0.3.2)
     orm_adapter (0.5.0)
     pg (0.18.2)
     pry (0.10.1)
@@ -149,6 +150,7 @@ DEPENDENCIES
   devise (~> 3.1.0.rc2)
   jbuilder (~> 2.0)
   jquery-rails
+  nested_form
   pg
   pry
   rails (= 4.1.10)

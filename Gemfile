@@ -28,6 +28,7 @@ gem 'simple_form'
 gem 'rolify'
 gem 'wicked'
 gem 'pry'
+gem 'nested_form'
 
 group :development, :test do 
    gem 'sqlite3'
