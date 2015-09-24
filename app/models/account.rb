@@ -1,5 +1,6 @@
 class Account < ActiveRecord::Base
 	belongs_to :user
+	has_many :appointments
   def name
   	"#{first_name} #{last_name}"
   end

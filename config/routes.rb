@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
   root "pages#home"
 
+  get 'about', to: 'pages#about'
+
   resources :users, only: [:show]
 
   resources :appointments

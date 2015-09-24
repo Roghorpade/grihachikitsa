@@ -16,16 +16,17 @@ class AppointmentsController < ApplicationController
 		@appointment.user = current_user
 
 		if @appointment.save
-			flash[:notice] = 'Appointment created. Pending Confirmation.'
-			redirect_to appointment_path(@appointment)
-	    else
-	    	redirect_to root_path
+			flash[:notice] = "Appointment for #{@appointment.account.name} created. Time: #{@appointment.time}. Pending Confirmation."
 	    end
+
+	    sign_out current_user
+
+	    redirect_to root_path
 	end
 
 	private
 
 	def appointment_params
-		params.require(:appointment).permit(:time, :reason)
+		params.require(:appointment).permit(:time, :reason, :account_id)
 	end
 end

@@ -5,6 +5,12 @@ class AccountCreationsController < ApplicationController
 	def show
 		@user = current_user
 
+		if step == :accounts_count
+			unless current_user.accounts.empty?
+				return redirect_to root_path
+			end
+		end
+
 		render_wizard
 	end
 
@@ -32,5 +38,9 @@ class AccountCreationsController < ApplicationController
 	def user_params
 		params.require(:user).permit(accounts_attributes: [:first_name, :last_name, :height, :date_of_birth,
 			:mobile_number, :gender, :address])
+	end
+
+	def finish_wizard_path
+		new_appointment_path
 	end
 end
