@@ -11,8 +11,16 @@ $light-grey: #F7F7F7;
     background-position: center;
 }
 
+body { padding-top:60px; }
+
 .topbar {
-    padding-top: 50px;
+    z-index:1;
+    position:fixed;
+    top:0;
+    width:100%;
+    background:#38857F;
+    padding:0 20px;
+    border-bottom: 1px solid rgb(50, 50, 50);
 
     .logo {
         float: left;
@@ -21,6 +29,7 @@ $light-grey: #F7F7F7;
     .menu {
         float: right;
         padding-top: 16px;
+        padding-bottom: 8px;
 
         ul {
             display: inline-block;
@@ -95,16 +104,19 @@ $light-grey: #F7F7F7;
 .btn-brand {
     border: none;
     border-radius: 50px;
-    background: $brand-color;
+    //background: $brand-color;
+    background: #084061;
     -webkit-transition: background 0.2s ease;
     transition: background 0.2s ease;
 
     &:hover, &:focus {
-        background: lighten($brand-color, 5%);
+        //background: lighten($brand-color, 5%);
+        background: lighten(#084061, 5%);
     }
 
     &:active {
-        background: lighten($brand-color, 10%);
+        //background: lighten($brand-color, 10%);
+        background: lighten(#084061, 10%);
     }
 }
 

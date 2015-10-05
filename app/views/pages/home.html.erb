@@ -1,23 +1,23 @@
+<nav class="topbar container">
+    <!--<div class="logo">
+        <a href="/"><img src="<%= image_path "logo.png" %>" alt="Grihachikitsa" /></a>
+    </div>-->
+    <div class="menu">
+        <ul>
+            <li><a href="/about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+        </ul>
+        <% if user_signed_in? %>
+            <%= link_to "SIGN OUT", destroy_user_session_path, method: :delete, class: "btn btn-primary btn-brand" %>
+        <% else %>
+            <a href="/users/sign_in" class="btn btn-primary btn-brand">SIGN IN</a>
+        <% end %>
+
+    </div>
+</nav>
+
 <header class="headline header-image">
-    <nav class="topbar container">
-        <div class="logo">
-            <a href="/"><img src="<%= image_path "logo.png" %>" alt="Grihachikitsa" /></a>
-        </div>
-        <div class="menu">
-            <ul>
-                <li><a href="/about">About</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#pricing">Pricing</a></li>
-            </ul>
-            <% if user_signed_in? %>
-                <%= link_to "SIGN OUT", destroy_user_session_path, method: :delete, class: "btn btn-primary btn-brand" %>
-            <% else %>
-                <a href="/users/sign_in" class="btn btn-primary btn-brand">SIGN IN</a>
-            <% end %>
-
-        </div>
-    </nav>
-
     <div class="header-center">
         <h1>WE BRING DOCTORS HOME</h1>
         <h2>No more waiting at clinics.</h2>
@@ -44,7 +44,7 @@
                 <div class="what-item">
                     <img src="<%= image_path "what/quality.png" %>" alt="Quality" class="icon" />
                     <p class="title">Quality</p>
-                    <p class="description"> Personalized healthcare for you and your family from doctors of trusted medical organizations.</p>
+                    <p class="description"> Personalized healthcare from doctors of trusted medical organizations.</p>
                 </div>
             </div>
 
@@ -92,7 +92,7 @@
             <div class="col-sm-12 col-md-4 column">
                 <div class="how-item">
                     <span class="number"><span class="text">3</span></span>
-                    <p class="description"> KNOCK, KNOCK. Medical assistance at your doorstep to fix you up.</p>
+                    <p class="description"> KNOCK, KNOCK. Medical professional at your doorstep to fix you up.</p>
                 </div>
             </div>
         </div>
@@ -112,7 +112,7 @@
                     <img src="<%= image_path "what/quality.png" %>" alt="Quality" class="icon" />
                     <p class="title">ILLNESS</p>
                     <p class="description">The Doctor will diagnose, treat and prescribe appropriate medication in the comfort of your home.</p>
-                    <p class="price">Rs.700</p>
+                    <p class="price">Rs.600</p>
                 </div>
             </div>
 
@@ -129,7 +129,7 @@
                 <div class="services-item">
                     <img src="<%= image_path "what/affordable.png" %>" alt="Affordable" class="icon" />
                     <p class="title">PHYSIOTHERAPY</p>
-                    <p class="description">Arthritis, displacements and other painful conditions will be alleviated without the hassle of traveling to the hospital.</p>
+                    <p class="description">Arthritis, displacements and other painful conditions will be alleviated at the comfort of your home.</p>
                     <p class="price">Rs.600</p>
                 </div>
             </div>
@@ -139,7 +139,7 @@
 
 <div class="footer-cta">
     <div class="container">
-        <p class="header">No more waiting at clinics.</p>
+        <p class="header">No more waiting at Clinics.</p>
 
         <div class="header-buttons">
             <% if user_signed_in? %>

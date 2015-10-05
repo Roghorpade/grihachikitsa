@@ -1,5 +1,9 @@
-<div class= "jumbotron">
-<h1>Choose an appointment date:</h1>
+<div class= "jumbotron panel panel-info">
+<div class="panel-heading">
+	<h2>Choose an appointment date:</h2>
+</div>
+
+<div class="panel-body">
 
 <%= simple_form_for @appointment do |f|%>
 	<%= f.datetime_select :time, order: [:day, :month, :year]  %>
@@ -16,5 +20,7 @@
 	<br>
 	<br>
 	<%= f.submit %>
-</div>
 <% end %>
+
+</div>
+</div>
