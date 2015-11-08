@@ -3,6 +3,10 @@ class Admin::AppointmentsController < AdminController
 		@appointments = Appointment.all
 	end
 
+	def show
+		@appointment = Appointment.find(params[:id])
+	end
+
 	def confirm
 		@appointment = Appointment.find(params[:id])
 
@@ -25,5 +29,24 @@ class Admin::AppointmentsController < AdminController
 		else
 		    flash[:alert] = 'Error occured.'
 		end
+	end
+
+	def upload_result
+		@appointment = Appointment.find(params[:id])
+		@result = @appointment.result || Result.create(appointment: @appointment)
+	end
+
+	def upload
+		@appointment = Appointment.find(params[:id])
+		@result = @appointment.result
+		@result.update(result_params)
+
+		redirect_to [:admin, @appointment]
+	end
+
+	private
+
+	def result_params
+		params.require(:result).permit(:document)
 	end
 end

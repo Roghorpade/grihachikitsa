@@ -12,6 +12,9 @@ class User < ActiveRecord::Base
 
   accepts_nested_attributes_for :accounts
 
+  geocoded_by :address
+  after_validation :geocode
+
   def name
   	"#{first_name} #{last_name}"
   end

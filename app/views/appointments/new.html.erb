@@ -5,6 +5,32 @@
 
 <div class="panel-body">
 
+
+<div style='width: 800px;'>
+  <div id="basic_map" style='width: 600px; height: 400px;'></div>
+</div>
+
+    
+<script>
+handler = Gmaps.build('Google');
+handler.buildMap({
+    provider: {
+      // pass in other Google Maps API options here
+    },
+    internal: {
+      id: 'basic_map'
+    }
+  },
+  function(){
+    markers = handler.addMarkers(<%= raw @hash.to_json %>);
+    handler.bounds.extendWith(markers);
+    handler.fitMapToBounds();
+  }
+);
+</script>
+
+<br> 
+
 <%= simple_form_for @appointment do |f|%>
 	<%= f.datetime_select :time, order: [:day, :month, :year]  %>
 	<br>
@@ -12,9 +38,9 @@
 	<%= f.label 'Reason for appointment:' %><br>
 	<%= f.text_area :reason, cols: '60', rows: '10' %>
 	<br>
-    <%= f.label 'For whom do you want to schedule an appointment?' %>
     <br>
-	<% if current_user.accounts %>
+	<% if current_user.accounts.present? %>
+	  <%= f.label 'For whom do you want to schedule an appointment?' %>
 	  <%= f.collection_select :account_id, current_user.accounts.select {|a| a.first_name.present?}, :id, :name %>
 	<% end %>
 	<br>

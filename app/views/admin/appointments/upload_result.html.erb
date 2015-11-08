@@ -1,0 +1,5 @@
+<%= simple_form_for @result, url: upload_admin_appointment_path, method: :put, html: { multipart: true } do |form| %>
+  <%= form.input :document, as: :file %>
+
+  <%= form.submit %>
+<% end %>

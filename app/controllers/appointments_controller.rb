@@ -5,6 +5,21 @@ class AppointmentsController < ApplicationController
 
 	def new
 		@appointment = Appointment.new
+		@users = User.all
+@hash = Gmaps4rails.build_markers(@users) do |user, marker|
+  marker.lat user.latitude
+  marker.lng user.longitude
+
+end
+
+#@hash = @hash.map do |opt|
+	#if opt[:lat] == current_user.latitude  && opt[:lng ]== current_user.longitude
+		#opt
+	#else
+		#opt.merge!({infowindow: "hello!", picture: {url: "https://addons.cdn.mozilla.net/img/uploads/addon_icons/13/13028-64.png", height: 32, width: 32}})
+	#end
+#end
+
 	end
 
 	def show
@@ -16,12 +31,14 @@ class AppointmentsController < ApplicationController
 		@appointment.user = current_user
 
 		if @appointment.save
-			flash[:notice] = "Appointment for #{@appointment.account.name} created. Time: #{@appointment.time}. Pending Confirmation."
+			if current_user.accounts.present?
+				flash[:notice] = "Appointment for #{@appointment.account.name} created. Time: #{@appointment.time}. Pending Confirmation."
+	    	else
+	    		flash[:notice] = "Appointment for #{current_user.name} created. Time: #{@appointment.time}. Pending Confirmation."
+	    	end
 	    end
 
-	    sign_out current_user
-
-	    redirect_to root_path
+	    redirect_to user_path(current_user)
 	end
 
 	private

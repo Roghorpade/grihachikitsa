@@ -1,0 +1,9 @@
+<% @appointments.each do |appointment| %>
+  <h3><%= appointment.id %><h3>
+  <%= appointment.time %>
+  <br>
+  <%= link_to appointment.user.name, user_path(appointment.user) %>
+  <br>
+  <%= link_to 'Show results', appointment_path(appointment) %>
+  <hr>
+<% end %>

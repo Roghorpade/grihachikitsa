@@ -1,3 +1,4 @@
+
 source 'https://rubygems.org'
 
 
@@ -29,6 +30,11 @@ gem 'rolify'
 gem 'wicked'
 gem 'pry'
 gem 'nested_form'
+gem 'paperclip'
+gem 'geocoder'
+gem 'gmaps4rails'
+gem 'underscore-rails'
+gem 'markerclustererplus-rails'
 
 group :development, :test do 
    gem 'sqlite3'

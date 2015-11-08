@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150923143054) do
+ActiveRecord::Schema.define(version: 20151108122307) do
 
   create_table "accounts", force: true do |t|
     t.integer  "height"
@@ -39,6 +39,16 @@ ActiveRecord::Schema.define(version: 20150923143054) do
   end
 
   add_index "appointments", ["user_id"], name: "index_appointments_on_user_id"
+
+  create_table "results", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "document_file_name"
+    t.string   "document_content_type"
+    t.integer  "document_file_size"
+    t.datetime "document_updated_at"
+    t.integer  "appointment_id"
+  end
 
   create_table "roles", force: true do |t|
     t.string   "name"
@@ -73,6 +83,8 @@ ActiveRecord::Schema.define(version: 20150923143054) do
     t.boolean  "steps_passed",                     default: false
     t.string   "address"
     t.boolean  "want_to_create_multiple_accounts"
+    t.float    "latitude"
+    t.float    "longitude"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

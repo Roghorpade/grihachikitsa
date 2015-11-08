@@ -21,6 +21,8 @@ Rails.application.routes.draw do
       member do
         get :confirm
         get :cancel
+        get :upload_result
+        put :upload
       end
     end
   end

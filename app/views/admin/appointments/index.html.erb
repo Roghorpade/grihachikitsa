@@ -6,5 +6,8 @@
   <%= link_to 'Confirm', confirm_admin_appointment_path(appointment) %></div>
    <div class='btn btn-danger' style='color:white'>
   <%= link_to 'Cancel', cancel_admin_appointment_path(appointment) %></div>
+   <div class='btn btn-danger' style='color:white'>
+   	<%= link_to 'Upload result', upload_result_admin_appointment_path(appointment) %>
+   </div>
   <hr>
 <% end %>
