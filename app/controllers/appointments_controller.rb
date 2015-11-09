@@ -4,21 +4,25 @@ class AppointmentsController < ApplicationController
 	end
 
 	def new
-		@appointment = Appointment.new
-		@users = User.all
-@hash = Gmaps4rails.build_markers(@users) do |user, marker|
-  marker.lat user.latitude
-  marker.lng user.longitude
+	  @appointment = Appointment.new
 
-end
+	  @users = [current_user] + User.with_role('doctor')
 
-#@hash = @hash.map do |opt|
-	#if opt[:lat] == current_user.latitude  && opt[:lng ]== current_user.longitude
-		#opt
-	#else
-		#opt.merge!({infowindow: "hello!", picture: {url: "https://addons.cdn.mozilla.net/img/uploads/addon_icons/13/13028-64.png", height: 32, width: 32}})
-	#end
-#end
+	  @hash = Gmaps4rails.build_markers(@users) do |user, marker|
+  		marker.lat user.latitude
+  		marker.lng user.longitude
+  		if user.has_role? ('doctor')
+  			marker.picture({
+  		  		"url" => "http://www.fancyicons.com/free-icons/103/pretty-office-6/png/32/doctor_32.png",
+          		"width" =>  32,
+          		"height" => 32
+  			})
+  		end
+
+  		if user != current_user
+  		end
+      end
+
 
 	end
 

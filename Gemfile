@@ -35,6 +35,7 @@ gem 'geocoder'
 gem 'gmaps4rails'
 gem 'underscore-rails'
 gem 'markerclustererplus-rails'
+gem 'geoip'
 
 group :development, :test do 
    gem 'sqlite3'
