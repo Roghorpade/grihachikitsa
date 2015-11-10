@@ -7,7 +7,6 @@ class AppointmentsController < ApplicationController
 	  @appointment = Appointment.new
 
 	  @users = [current_user] + User.with_role('doctor')
-    @users = @users.select { |u| u.longitude.present? && u.latitude.present? }
 
 	  @hash = Gmaps4rails.build_markers(@users) do |user, marker|
   		marker.lat user.latitude
