@@ -18,9 +18,18 @@ class AppointmentsController < ApplicationController
           		"width" =>  32,
           		"height" => 32
   			})
+
+  		  @infowindow = "<b style='font-size: 20px;'>#{user.name}</b><br>"
+
+  		  if user.specialization.present?
+  		  	@infowindow += "<p style='font-size: 15px;'>#{user.specialization}<p>"
+  		  end
+
+  		  marker.infowindow @infowindow
   		end
 
-  		if user != current_user
+  		if user == current_user
+  			marker.infowindow 'You'
   		end
       end
 	end
