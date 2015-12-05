@@ -50,7 +50,9 @@ class AppointmentsController < ApplicationController
 	    	end
 	    end
 
-	    redirect_to user_path(current_user)
+	    sign_out current_user
+
+	    redirect_to root_path
 	end
 
 	private
