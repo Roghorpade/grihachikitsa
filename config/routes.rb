@@ -18,10 +18,15 @@ Rails.application.routes.draw do
     resources :users, only: [:index]
 
     resources :appointments do
+      collection do
+          get :confirmed_index
+      end
+
       member do
         get :confirm
         get :cancel
         get :upload_result
+
         put :upload
       end
     end

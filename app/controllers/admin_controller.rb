@@ -4,7 +4,7 @@ class AdminController < ApplicationController
 	private
 
 	def check_if_admin?
-		unless current_user.has_role? 'admin'
+		unless current_user.admin
 			flash[:alert] = 'Admin access only.'
 
 			redirect_to root_path

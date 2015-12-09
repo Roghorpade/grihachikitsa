@@ -3,6 +3,10 @@ class Admin::AppointmentsController < AdminController
 		@appointments = Appointment.all
 	end
 
+	def confirmed_index
+		@appointments = Appointment.where(confirmed: true)
+	end
+
 	def show
 		@appointment = Appointment.find(params[:id])
 	end
