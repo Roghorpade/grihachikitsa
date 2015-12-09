@@ -11,7 +11,7 @@
             <li><a href="/admin/appointments">Admin Appointments</a></li>
         <%end %>
         </ul>
-      
+
         <% if user_signed_in? %>
             <%= link_to "SIGN OUT", destroy_user_session_path, method: :delete, class: "btn btn-primary btn-brand" %>
         <% else %>
@@ -135,6 +135,26 @@
                     <p class="title">PHYSIOTHERAPY</p>
                     <p class="description">Arthritis, displacements and other painful conditions will be alleviated at the comfort of your home.</p>
                     <p class="price">Rs.600</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row last-row">
+            <div class="col-sm-12 col-md-6 column">
+                <div class="services-item">
+                    <img src="<%= image_path "what/lab.png" %>" alt="Lab Services" class="icon" />
+                    <p class="title">LAB SERVICES</p>
+                    <p class="description">The Doctor will diagnose, treat and prescribe appropriate medication in the comfort of your home.</p>
+                    <p class="price">Rs.600</p>
+                </div>
+            </div>
+
+            <div class="col-sm-12 col-md-6 column">
+                <div class="services-item">
+                    <img src="<%= image_path "what/nursing.png" %>" alt="Nursing Care at Home" class="icon" />
+                    <p class="title">NURSING CARE AT HOME</p>
+                    <p class="description">Get treated for Minor Injuries like sprains and wounds that require suturing by Hospital approved Nurses.</p>
+                    <p class="price">Rs.500</p>
                 </div>
             </div>
         </div>

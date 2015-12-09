@@ -233,6 +233,10 @@ body { padding-top:60px; }
             margin: 0;
         }
     }
+
+    .last-row {
+        margin-top: 50px;
+    }
 }
 
 .footer-cta {
@@ -246,6 +250,8 @@ body { padding-top:60px; }
     .container {
         color: white;
         padding: 150px 20px;
+        background: rgba(0, 0, 0, 0.4);
+        width: 100%;
 
         .header {
             font-size: 40px;
@@ -262,6 +268,14 @@ body { padding-top:60px; }
 
 footer {
     margin: 50px 0;
+}
+
+.what-section .what-item,
+.how-section .how-item,
+.services-section .services-item {
+    max-width: 350px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 @media (max-width: 991px) {

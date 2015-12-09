@@ -86,7 +86,6 @@ ActiveRecord::Schema.define(version: 20151206094446) do
     t.float    "latitude"
     t.float    "longitude"
     t.string   "specialization"
-    t.boolean  "name"
     t.boolean  "admin"
   end
 
