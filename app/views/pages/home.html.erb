@@ -1,7 +1,9 @@
-<nav class="topbar container">
-    <!--<div class="logo">
-        <a href="/"><img src="<%= image_path "logo.png" %>" alt="Grihachikitsa" /></a>
-    </div>-->
+<nav id="topbar" class="topbar container transparent">
+    <div class="logo">
+        <a href="/">
+            <span class="part1">Griha</span><span class="part2">Chikitsa</span>
+        </a>
+    </div>
     <div class="menu">
         <ul>
             <li><a href="/about">About</a></li>
@@ -17,7 +19,6 @@
         <% else %>
             <a href="/users/sign_in" class="btn btn-primary btn-brand">SIGN IN</a>
         <% end %>
-
     </div>
 </nav>
 
@@ -142,8 +143,8 @@
         <div class="row last-row">
             <div class="col-sm-12 col-md-6 column">
                 <div class="services-item">
-                    <img src="<%= image_path "what/lab.png" %>" alt="Lab Services" class="icon" />
-                    <p class="title">LAB SERVICES</p>
+                    <img src="<%= image_path "what/lab.png" %>" alt="Lab Tests" class="icon" />
+                    <p class="title">LAB TESTS</p>
                     <p class="description">The Doctor will diagnose, treat and prescribe appropriate medication in the comfort of your home.</p>
                     <p class="price">Rs.600</p>
                 </div>

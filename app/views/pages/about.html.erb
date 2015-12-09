@@ -1,4 +1,37 @@
-<h1>About page<h1> 
+<nav id="topbar" class="topbar container transparent">
+    <!--<div class="logo">
+        <a href="/"><img src="<%= image_path "logo.png" %>" alt="Grihachikitsa" /></a>
+    </div>-->
+    <div class="menu">
+        <ul>
+            <li><a href="/about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+              <% if current_user.try(:admin) %>
+            <li><a href="/admin/appointments">Admin Appointments</a></li>
+        <%end %>
+        </ul>
 
+        <% if user_signed_in? %>
+            <%= link_to "SIGN OUT", destroy_user_session_path, method: :delete, class: "btn btn-primary btn-brand" %>
+        <% else %>
+            <a href="/users/sign_in" class="btn btn-primary btn-brand">SIGN IN</a>
+        <% end %>
 
-	GrihaChikitsa is a healthcare startup reinventing the traditional doctor­-patient experience. We want to be your family’s first choice for healthcare. Our services were created to offer people access to quality, convenient and affordable care whenever and wherever needed. We send certified doctors(physicians) from reputed hospitals to meet your healthcare needs in your home ­- a convenient alternative to crowded and busy doctor’s offices.
+    </div>
+</nav>
+
+<header class="about headline header-image">
+    <div class="header-center">
+		<h1></h1>
+        <h2>About GrihaChikitsa</h2>
+    </div>
+</header>
+
+<section class="section about-section">
+    <div class="container">
+        <p class="content">
+			GrihaChikitsa is a healthcare startup reinventing the traditional doctor­-patient experience. We want to be your family’s first choice for healthcare.<br><br>Our services were created to offer people access to quality, convenient and affordable care whenever and wherever needed. We send certified doctors(physicians) from reputed hospitals to meet your healthcare needs in your home ­- a convenient alternative to crowded and busy doctor’s offices.
+		</p>
+    </div>
+</section>
