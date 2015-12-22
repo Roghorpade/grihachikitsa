@@ -21,6 +21,7 @@ module Grihachikitsa
     # config.i18n.default_locale = :de
 
     # required for heroku
-    config.assets.initialize_on_precompile = false
+    # no longer needed for rails 4 config.assets.initialize_on_precompile = false
+    config.serve_static_assets = true
   end
 end
