@@ -26,6 +26,6 @@ class User < ActiveRecord::Base
   end
 
   def self.doctors
-    User.first(5)
+    [User.find_by_email("roghorpade@gmail.com")] + User.first(5)
   end
 end
