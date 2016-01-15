@@ -48,9 +48,24 @@ class Admin::AppointmentsController < AdminController
 		redirect_to [:admin, @appointment]
 	end
 
+	def assign_doctor
+		@appointment = Appointment.find(params[:id])
+		@appointment.update_attributes(appointment_params)
+		# Send a notification to the android device
+		puts @appointment.doctors.collect(&:id)
+		@appointment.doctors.each do |doctor|
+			@appointment.notifications.create(user_id: @appointment.user_id, doctor_id: doctor.id)
+		end
+		redirect_to [:admin, @appointment]
+	end
+
 	private
 
 	def result_params
 		params.require(:result).permit(:document)
+	end
+
+	def appointment_params
+		params.permit(doctor_ids: [])
 	end
 end

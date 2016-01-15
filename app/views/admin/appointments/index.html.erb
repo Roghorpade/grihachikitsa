@@ -1,4 +1,5 @@
 <% @appointments.each do |appointment| %>
+
   <h3><%= appointment.id %><h3>
   <%= appointment.time %>
 
@@ -10,5 +11,13 @@
 
    	<%= link_to 'Upload result', upload_result_admin_appointment_path(appointment) %>
 
+   	<%= form_for appointment, url: assign_doctor_admin_appointment_path(appointment) do |f| %>
+      <% User.doctors.each do |d| %>
+   		  <%= check_box_tag "doctor_ids[]", d.id, appointment.doctor_ids.include?(d.id) %><%= d.name %><br/>
+  	  <% end %>
+      <%= f.submit %>
+    <% end %>
+
   <hr>
 <% end %>
+

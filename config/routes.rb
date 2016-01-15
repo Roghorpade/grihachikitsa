@@ -26,7 +26,7 @@ Rails.application.routes.draw do
         get :confirm
         get :cancel
         get :upload_result
-
+        patch :assign_doctor
         put :upload
       end
     end

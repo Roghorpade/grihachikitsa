@@ -1,1 +1,4 @@
 <%= image_tag @appointment.result.document.url %>
+<% @appointment.doctors.each do |doctor| %>
+	<%= doctor.name %><br/>
+<% end %>

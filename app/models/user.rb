@@ -7,7 +7,9 @@ class User < ActiveRecord::Base
 
   enum gender: {male: 0, female: 1}
 
-  has_many :appointments
+  has_many :appointments_doctors
+  has_many :appointments, through: :appointments_doctors, foreign_key: 'doctor_id'
+
   has_many :accounts
 
   accepts_nested_attributes_for :accounts
@@ -21,5 +23,9 @@ class User < ActiveRecord::Base
 
   def age
   	((Date.current - date_of_birth)/365).to_i if date_of_birth
+  end
+
+  def self.doctors
+    User.first(5)
   end
 end
