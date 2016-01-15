@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160115100733) do
+ActiveRecord::Schema.define(version: 20160115175407) do
 
   create_table "accounts", force: true do |t|
     t.integer  "height"
@@ -40,6 +40,13 @@ ActiveRecord::Schema.define(version: 20160115100733) do
   end
 
   add_index "appointments", ["user_id"], name: "index_appointments_on_user_id"
+
+  create_table "appointments_doctors", force: true do |t|
+    t.integer  "doctor_id"
+    t.integer  "appointment_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "notifications", force: true do |t|
     t.integer  "user_id"
